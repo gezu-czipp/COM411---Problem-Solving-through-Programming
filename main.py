@@ -1,37 +1,37 @@
-from person import Person
+def isPrime(x):
+  for i in range(2,x):
+    if x%i == 0:
+      return False
+  return True
 
-class Database:
-
-  def __init__(self):
-    self.name = "Piotr`s Database"
-    self.people = []
-    self.suspended = []
-
-  def add_person(self, person):
-    self.people.append(person)
-
-  def display_all(self):
-    for person in self.people:
-      person.hello()
-
-  def all_eat(self, food, weight):
-    for person in self.people:
-      person.eat(food, weight)
+def findPrime(beginning, finish):
+  for j in range(beginning,finish):
+    if isPrime(j):
+      return j
 
 
+def encrypt():
+  print("Provide two integers")
+  x = int(input())
+  y = int(input())
+  prime1 = findPrime(x,y)
+  x = int(input())
+  y = int(input())
+  prime2 = findPrime(x,y)
+  return prime1*prime2
+
+print(encrypt())
 
 
-db = Database()
-Daniel = Person("Daniel", 26, 77)
-Raluca = Person("Raluca", 23, 48, 99)
-Piotr = Person("Piotr")
-Vlad = Person("Vlad", 42, 150)
-db.add_person(Daniel)
-db.add_person(Raluca)
-db.add_person(Piotr)
-db.add_person(Vlad)
-db.display_all()
-print()
-db.all_eat("Lasagne", 3)
-print()
-db.display_all()
+#x=6
+#y = 12
+#print(f"The prime between {x} and {y} is {findPrime(x,y)}")
+
+
+
+#print("What is the number?")
+#x=int(input())
+#if isPrime(x):
+#  print (f"The number {x} is prime!")
+#else:
+#  print("The number was not prime!")
